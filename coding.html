@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <!--It links different files you need = set up-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--the first two lines are defaults-->
+    <title>Refrigerator manager</title>
+    <!--If you add something in this tag, it is going to be shown on the head part of the web page-->
+    <meta name="description" content="" />
+    <!--Default-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Default-->
+    <link rel="stylesheet" href="codingcss.css" />
+    <!--css=stylesheet By using this tag, you can link codingcss and coding.html. Therefore, when you edit aesthetical points on the web page, you can just do it in the css file-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--jquery= it makes javascript easier, this links jquery to the html file. We get jquery from the internet-->
+  </head>
+  <body>
+    <!--main contents of the web page-->
+    <div id="website">
+      <!--div = divider = container(easiest one)--><!--id tag identifies the tag-->
+      <div class="firstcolumn">
+        <!--class is different with id => id is always unique, class is general-->
+        <div id="notyet"><!--TO DO : Add a logo--></div>
+        <div id="leftbottom">
+          <div id="time">9th Sep 2022 8:44PM</div>
+          <div>Eggs</div>
+        </div>
+        <!--It defines the upper left corner of the web page-->
+      </div>
+      <div id="item">
+        <!--It defines the middle part of the web page--><!--It is connected with the data server and shows some data what it has-->
+        <div class="oldrecent">
+          <!--old items and recent items have a same class -> more simple to add them on css file-->
+          Old items
+          <div id="old1"></div>
+          <div id="old2"></div>
+          <div id="old3"></div>
+        </div>
+        <div class="oldrecent">
+          Recent items
+          <div id="recent1"></div>
+          <div id="recent2"></div>
+          <div id="recent3"></div>
+        </div>
+      </div>
+      <div id="button">
+        <!--This defines the right part of the web page + THERE WILL BE THREE BIG BUTTONS DISCLUDING THE EDIT BUTTON-->
+        <a href="http://localhost:8000/addbuttonpage.html"
+          ><div class="abutton">Add button</div></a
+        >
+        <a href="http://localhost:8000/ingredientlist.html"
+          ><div class="abutton">Ingredient list</div></a
+        >
+        <a href="http://localhost:8000/recipiebutton.html"
+          ><div class="abutton">Recipie</div></a
+        >
+      </div>
+    </div>
+
+    <script src="coding.js" async defer></script>
+    <!--This tag connects to codingjs file--><!--async -> it asyncronizes html and js, so they run at the same time + defer -> in case js takes long time, it just shows the web page first  They prevent lagging-->
+  </body>
+</html>

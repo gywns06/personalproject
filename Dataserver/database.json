@@ -1,0 +1,22 @@
+{
+  "Fooditem": [
+    {
+      "name": "Milk",
+      "expiredate": "17.09.2022",
+      "type": "Milkproduct",
+      "purchasedate": "01.09.2022",
+      "quantity": 1,
+      "description": "",
+      "id": 1
+    },
+    {
+      "name": "Cheese",
+      "expiredate": "17.09.2022",
+      "type": "Milkproduct",
+      "purchasedate": "01.09.2022",
+      "quantity": 1,
+      "description": "",
+      "id": 2
+    }
+  ]
+}

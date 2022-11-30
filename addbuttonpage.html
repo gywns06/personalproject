@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--an useful plug in-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="addbuttonpage.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="addbutton.js" async defer></script>
+  </head>
+  <body>
+    <div>
+      addbuttonpage
+      <a href="http://localhost:8000/coding.html"
+        ><div class="abutton">Go Home</div></a
+      ><!--a tag always links somewhere else, href tag is the link where it has the link-->
+    </div>
+    <form id="ingredientform" name="ingredients">
+      <!--form is also like a container where you can put input elements-->
+      <label for="food">Choose a food:</label
+      ><!--label tag looks for elments whose name is food, and then labels them-->
+      <select name="food" id="food">
+        <!--this tag adds a drop-down-->
+        <option value="egg">egg</option>
+        <!--by using this tag, you can add options in the drop-down-->
+        <option value="cheese">cheese</option>
+        <option value="beef">beef</option>
+        <option value="pork">pork</option>
+      </select>
+
+      <label for="quantity" id="quantitylabel">quantity: </label>
+
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        max="100"
+      /><!--by using this tag, you can choose numbers-->
+
+      <label for="quantityingrams" class="donotshow" id="quantityingramslabel"
+        >quantity in grams: </label
+      ><!--extra quantity tag is for elements which are not measurable, and it is shown through javascript later-->
+
+      <input
+        type="number"
+        id="quantityingrams"
+        name="quantityingrams"
+        min="1"
+        max="5000"
+        class="donotshow"
+      />
+
+      <label for="purchasedate">Purchase date:</label>
+
+      <input
+        type="date"
+        id="purchasedate"
+        name="purchase"
+        value=""
+      /><!--input date tag adds a calander where you can input a date easily-->
+
+      <label for="expiredate">Expire date:</label>
+
+      <input type="date" id="expiredate" name="expire" value="" />
+
+      <p><label for="fooddescription">Any other descriptions:</label></p>
+      <textarea
+        id="fooddescription"
+        name="description"
+        rows="10"
+        cols="100"
+      ></textarea
+      ><!--textare tag adds a box where you can write something-->
+      <br /><!--break-->
+      <input
+        type="submit"
+        value="Submit"
+      /><!--the button added by this tag submits data to the data server-->
+    </form>
+  </body>
+</html>

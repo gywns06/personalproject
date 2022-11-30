@@ -1,0 +1,55 @@
+#leftbottom,/*hashtag catches ids*/
+#item {
+  margin: 15px; /*this tag adds space between items*/
+  font-size: 50px; /*this tag changes the font size of texts*/
+  font-weight: 900; /*this affects thickness of letters*/
+  display: flex; /*by adding this tag, it gives you possibility to organize items*/
+  flex-direction: column; /*this puts items in a column*/
+  align-items: center; /*this puts items in a center*/
+  justify-content: space-around; /*the tag positions items in the flex direction + space-around adds space around elements*/
+}
+#leftbottom {
+  height: 300px; /*it affects the height of this element*/
+  background-color: aqua; /*this changes the background color of the element*/
+}
+
+#item {
+  width: 30%; /*it affects the width of this element*/
+  height: 1010px;
+  background-color: brown;
+}
+.abutton {
+  height: 230px;
+  margin: 15px;
+  background-color: rgb(16, 187, 93);
+  font-size: 50px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; /*this rounds corners*/
+}
+#notyet {
+  height: 680px;
+  background-color: blue;
+  margin: 15px;
+}
+#website {
+  display: flex;
+  flex-direction: row;
+}
+#button {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.firstcolumn {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.oldrecent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
