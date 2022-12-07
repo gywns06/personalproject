@@ -14,7 +14,7 @@ function ingredientadd() {
     typejs = "milkproduct";
     realquantity = quantityingramsjs; // we differentiated some products by deciding if it is countable or not
   } else if (foodjs == "beef" || foodjs == "pork") {
-    // || means "or"
+    // || means "or" delete this
     typejs = "meat";
     realquantity = quantityingramsjs;
   }
