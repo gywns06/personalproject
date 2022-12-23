@@ -3,7 +3,7 @@
     {
       "name": "cheese",
       "type": "milkproduct",
-      "quantity": "5",
+      "quantity": "7",
       "purchasedate": "2022-10-07",
       "expiredate": "2022-10-27",
       "description": "Hellooo",
@@ -12,7 +12,7 @@
     {
       "name": "egg",
       "type": "milkproduct",
-      "quantity": "5",
+      "quantity": "6",
       "purchasedate": "2022-10-06",
       "expiredate": "2022-10-18",
       "description": "111",
