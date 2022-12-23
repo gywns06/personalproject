@@ -1,3 +1,9 @@
+let fooddictionary = {
+  egg: "🥚",
+  beef: "🍖",
+  pork: "🥩",
+  cheese: "🧀",
+};
 function compare(a, b) {
   // this 'compare' function is used to order the items based on their purchasedates, so if an item has an ealier purchasedate, it goes in front of others
   if (a.purchasedate < b.purchasedate) {
@@ -19,6 +25,31 @@ function compare2(a, b) {
   }
   return 0;
 }
+function checkifpossible(recipie, foodinformation) {
+  var alltheingredients = recipie.ingredient;
+  console.log(alltheingredients);
+  var insideoffridge = true;
+  for (let i = 0; i < alltheingredients.length; i++) {
+    var infridge = false;
+    var itemname = alltheingredients[i].itemname;
+    var quantity = alltheingredients[i].quantity;
+    for (let j = 0; j < foodinformation.length; j++) {
+      if (
+        itemname == foodinformation[j].name &&
+        quantity <= foodinformation[j].quantity
+      ) {
+        console.log(foodinformation[j]);
+        infridge = true;
+      }
+    }
+    console.log(infridge);
+    if (infridge == false) {
+      insideoffridge = false;
+    }
+  }
+  console.log(insideoffridge);
+  return insideoffridge;
+}
 
 setInterval(function () {
   var today = new Date();
@@ -39,26 +70,53 @@ setInterval(function () {
   );
 }, 1000);
 
-fetch("http://localhost:3000/Fooditem") //fetch connects to the data server
-  .then((response) => {
-    // by adding this tag, the web page can get respones from the data server, meaning that it can bring data from it
-    console.log(response); // console.log prints things what are happening inside the browser. So, this tag prints responses from the fetch
-    return response.json(); // gets data out of response and puts it into json object -> then I can use it in codes later /*return tag returns into line 7*/
-  })
-  .then((json) => {
-    // by using the tag 'then', you can hand in the data to the next task + split the code, to make it easy to understand .. it prevents javascript from rushing ahead
-    json.sort(compare); // used .sort() to use the 'compare' function
-    console.log(json); //json has all stored data
-    $("#old1").text(json[0].name); //$ picks a html element, in this case it picked an element "#old1" - # means 'id' // .text puts texts inside the html element that you picked
-    //json is a list of items, json[0].name --> 0 is the first element, to just get the first element we write json[0], .name brings only the name part of the element
-    $("#old2").text(json[1].name);
-    $("#old3").text(json[2].name);
-    return json;
-  })
-  .then((json) => {
-    json.sort(compare2);
-    console.log(json);
-    $("#recent1").text(json[0].name);
-    $("#recent2").text(json[1].name);
-    $("#recent3").text(json[2].name);
-  });
+async function recipiecheck() {
+  const recipies = await fetch("http://localhost:3000/recipies")
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      return json;
+    });
+  const fooditems = await fetch("http://localhost:3000/Fooditem")
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      return json;
+    });
+  fooditems.sort(compare);
+  $("#old1").text(fooditems[0].name + fooddictionary[fooditems[0].name]);
+  $("#old2").text(fooditems[1].name + fooddictionary[fooditems[1].name]);
+  $("#old3").text(fooditems[2].name + fooddictionary[fooditems[2].name]);
+  fooditems.sort(compare2);
+  $("#recent1").text(fooditems[0].name + fooddictionary[fooditems[0].name]);
+  $("#recent2").text(fooditems[1].name + fooddictionary[fooditems[1].name]);
+  $("#recent3").text(fooditems[2].name + fooddictionary[fooditems[2].name]);
+  let possiblerecipies = recipies.filter((r) => checkifpossible(r, fooditems));
+  console.log(possiblerecipies);
+  let possiblerecipiesnum = possiblerecipies.length;
+  let recipie1 = Math.floor(Math.random() * possiblerecipiesnum);
+  let recipie2 = Math.floor(Math.random() * possiblerecipiesnum);
+  console.log(recipie1);
+  console.log(recipie2);
+  if (possiblerecipiesnum > 1) {
+    while (recipie1 == recipie2) {
+      recipie2 = Math.floor(Math.random() * possiblerecipiesnum);
+      console.log(recipie2);
+    }
+  }
+  if (possiblerecipiesnum > 1) {
+    $("#recipieexplanation1").text(possiblerecipies[recipie1].description);
+    $("#recipename1").text(possiblerecipies[recipie1].name);
+    $("#recipieexplanation2").text(possiblerecipies[recipie2].description);
+    $("#recipename2").text(possiblerecipies[recipie2].name);
+  } else if (possiblerecipiesnum == 1) {
+    $("#recipieexplanation1").text(possiblerecipies[recipie1].description);
+    $("#recipename1").text(possiblerecipies[recipie1].name);
+  } else {
+    $("#recipieexplanation1").text("No recipes available, buy more food");
+    $("#recipename1").text("Lack of ingredients");
+  }
+}
+recipiecheck();

@@ -16,6 +16,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--Default-->
     <link rel="stylesheet" href="codingcss.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <!--css=stylesheet By using this tag, you can link codingcss and coding.html. Therefore, when you edit aesthetical points on the web page, you can just do it in the css file-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--jquery= it makes javascript easier, this links jquery to the html file. We get jquery from the internet-->
@@ -26,13 +30,31 @@
       <!--div = divider = container(easiest one)--><!--id tag identifies the tag-->
       <div class="firstcolumn">
         <!--class is different with id => id is always unique, class is general-->
-        <div id="notyet"><!--TO DO : Add a logo--></div>
+        <div id="logo"><!--TO DO : Add a logo--></div>
         <div id="leftbottom">
           <div id="time">9th Sep 2022 8:44PM</div>
-          <div>Eggs</div>
+        </div>
+        <div id="randomrecipe">
+          <div class="recipename" id="recipename1"></div>
+          <div class="recipeexplanation" id="recipieexplanation1"></div>
+          <div id="recipeline1" class="recipeline"></div>
+          <div id="recipeline2" class="recipeline"></div>
+          <div id="recipeline3" class="recipeline"></div>
+          <div id="recipeline4" class="recipeline"></div>
+          <div id="recipeline5" class="recipeline"></div>
+        </div>
+        <div id="randomrecipe">
+          <div class="recipename" id="recipename2"></div>
+          <div class="recipeexplanation" id="recipieexplanation2"></div>
+          <div id="recipeline1" class="recipeline"></div>
+          <div id="recipeline2" class="recipeline"></div>
+          <div id="recipeline3" class="recipeline"></div>
+          <div id="recipeline4" class="recipeline"></div>
+          <div id="recipeline5" class="recipeline"></div>
         </div>
         <!--It defines the upper left corner of the web page-->
       </div>
+
       <div id="item">
         <!--It defines the middle part of the web page--><!--It is connected with the data server and shows some data what it has-->
         <div class="oldrecent">
@@ -42,6 +64,7 @@
           <div id="old2"></div>
           <div id="old3"></div>
         </div>
+        <div id="theline"></div>
         <div class="oldrecent">
           Recent items
           <div id="recent1"></div>
@@ -51,15 +74,15 @@
       </div>
       <div id="button">
         <!--This defines the right part of the web page + THERE WILL BE THREE BIG BUTTONS DISCLUDING THE EDIT BUTTON-->
-        <a href="http://localhost:8000/addbuttonpage.html"
-          ><div class="abutton">Add button</div></a
-        >
+        <a href="http://localhost:8000/addbuttonpage.html">
+          <i class="fa-regular fa-square-plus buttonicon"></i>
+        </a>
         <a href="http://localhost:8000/ingredientlist.html"
-          ><div class="abutton">Ingredient list</div></a
-        >
+          ><i class="fa-solid fa-list buttonicon"></i
+        ></a>
         <a href="http://localhost:8000/recipiebutton.html"
-          ><div class="abutton">Recipie</div></a
-        >
+          ><i class="fa-solid fa-utensils buttonicon"></i
+        ></a>
       </div>
     </div>
 

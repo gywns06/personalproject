@@ -67,6 +67,62 @@
           "quantity": "4"
         }
       ]
+    },
+    {
+      "id": 1670444210226,
+      "name": "Food",
+      "description": "aikjopvoijaqa",
+      "ingredient": [
+        {
+          "itemname": "egg",
+          "quantity": "2"
+        },
+        {
+          "itemname": "cheese",
+          "quantity": "4"
+        },
+        {
+          "itemname": "pork",
+          "quantity": "6"
+        }
+      ]
+    },
+    {
+      "id": 1671651860819,
+      "name": "Cheeseegg sandwitch",
+      "description": "You need cheese and eggs to make this food.",
+      "ingredient": [
+        {
+          "itemname": "egg",
+          "quantity": "2"
+        },
+        {
+          "itemname": "cheese",
+          "quantity": "3"
+        }
+      ]
+    },
+    {
+      "id": 1671651863681,
+      "name": "Beef steak",
+      "description": "You need 2 grams of beef to make this food.",
+      "ingredient": [
+        {
+          "itemname": "beef",
+          "quantity": "2"
+        }
+      ]
+    },
+    {
+      "id": 1671651864243,
+      "name": "Barbeque",
+      "description": "You need 1 gram of pork.",
+      "ingredient": [
+        {
+          "itemname": "pork",
+          "quantity": "1"
+        }
+      ]
     }
   ]
 }

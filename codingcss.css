@@ -9,14 +9,22 @@
   justify-content: space-around; /*the tag positions items in the flex direction + space-around adds space around elements*/
 }
 #leftbottom {
-  height: 300px; /*it affects the height of this element*/
-  background-color: aqua; /*this changes the background color of the element*/
+  height: 150px; /*it affects the height of this element got rid of 150*/
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  /*this changes the background color of the element*/
+}
+#time {
+  background-color: rgb(255, 255, 255);
+  font-size: 35px;
+  padding: 25px 13px;
 }
 
 #item {
-  width: 30%; /*it affects the width of this element*/
+  width: 40%; /*it affects the width of this element*/
   height: 1010px;
-  background-color: brown;
+  background-color: #d9d9d9de;
+  border-radius: 60px;
 }
 .abutton {
   height: 230px;
@@ -29,10 +37,25 @@
   justify-content: center;
   border-radius: 50px; /*this rounds corners*/
 }
-#notyet {
-  height: 680px;
+.buttonicon {
+  font-size: 320px;
+  background-color: #00cdff63;
+}
+#spantest {
+  width: 50px;
+  height: 50px;
+  background-color: #00cdff63;
+}
+#logo {
+  height: 200px;
   background-color: blue;
   margin: 15px;
+}
+#randomrecipe {
+  background-color: rgb(247, 247, 21);
+  height: 300px;
+  margin: 15px;
+  position: relative;
 }
 #website {
   display: flex;
@@ -42,6 +65,8 @@
   width: 25%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 .firstcolumn {
   width: 40%;
@@ -52,4 +77,52 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: white;
+  width: 90%;
+  height: 40%;
+  border-radius: 40px;
+}
+#theline {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+}
+.recipeline {
+  position: absolute;
+  width: 95%;
+  left: 10px;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+}
+#recipeline1 {
+  top: 75px;
+}
+#recipeline2 {
+  top: 125px;
+}
+#recipeline3 {
+  top: 165px;
+}
+#recipeline4 {
+  top: 205px;
+}
+#recipeline5 {
+  top: 245px;
+}
+
+.recipename {
+  font-size: 50px;
+  font-weight: 800;
+  margin: 13px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  max-height: 60px;
+}
+.recipeexplanation {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 13px;
+  line-height: 40px;
+  max-height: 200px;
+  overflow-y: hidden;
 }
