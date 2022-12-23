@@ -1,3 +1,31 @@
+let foodtypedictionary = {
+  egg: { quantity: "quantity", type: "eggproduct" },
+  cheese: { quantity: "quantityingrams", type: "milkproduct" },
+  beef: { quantity: "quantityingrams", type: "meat" },
+  pork: { quantity: "quantityingrams", type: "meat" },
+};
+
+function showquantity() {
+  $("#quantity").removeClass("donotshow");
+  $("#quantitylabel").removeClass("donotshow");
+  $("#quantityingrams").addClass("donotshow");
+  $("#quantityingramslabel").addClass("donotshow");
+}
+
+function showquantityingrams() {
+  $("#quantity").addClass("donotshow");
+  $("#quantitylabel").addClass("donotshow");
+  $("#quantityingrams").removeClass("donotshow");
+  $("#quantityingramslabel").removeClass("donotshow");
+}
+
+let quantitydictionary = {
+  egg: showquantity,
+  cheese: showquantityingrams,
+  beef: showquantityingrams,
+  pork: showquantityingrams,
+};
+
 function ingredientadd() {
   foodjs = document.getElementById("food").value; // foodjs=variable, document = looking at the entire document, funtion.getElementById = get the first html element from the given id,  .value gives us value inside html element its one of those four ingredients in this id, alternative : $("#food").value
   purchasedatejs = document.getElementById("purchasedate").value;
@@ -5,19 +33,12 @@ function ingredientadd() {
   fooddescriptionjs = document.getElementById("fooddescription").value;
   quantityjs = document.getElementById("quantity").value;
   quantityingramsjs = document.getElementById("quantityingrams").value;
-  realquantity = 1; // we defined the value "realquantity" as 1
-  typejs = ""; // we defined the value as empty
-  if (foodjs == "egg") {
-    typejs = "eggproduct";
-    realquantity = quantityjs; // if the input data is egg, then the variable 'typejs' becomes 'eggproduct' and 'realquantity' turns into 'quantityjs'
-  } else if (foodjs == "cheese") {
-    typejs = "milkproduct";
-    realquantity = quantityingramsjs; // we differentiated some products by deciding if it is countable or not
-  } else if (foodjs == "beef" || foodjs == "pork") {
-    // || means "or"
-    typejs = "meat";
-    realquantity = quantityingramsjs;
-  }
+
+  typejs = foodtypedictionary[foodjs].type;
+  realquantity = document.getElementById(
+    foodtypedictionary[foodjs].quantity
+  ).value;
+
   fetch("http://localhost:3000/Fooditem", {
     // fetch links to the dataserver
     method: "POST", // POST means to store data
@@ -48,15 +69,5 @@ $("#ingredientform").submit(function (e) {
 
 $("#food").change(function () {
   fooditem = document.getElementById("food").value;
-  if (fooditem == "egg") {
-    $("#quantity").removeClass("donotshow");
-    $("#quantitylabel").removeClass("donotshow");
-    $("#quantityingrams").addClass("donotshow");
-    $("#quantityingramslabel").addClass("donotshow");
-  } else if (fooditem == "cheese" || fooditem == "beef" || fooditem == "pork") {
-    $("#quantity").addClass("donotshow");
-    $("#quantitylabel").addClass("donotshow");
-    $("#quantityingrams").removeClass("donotshow");
-    $("#quantityingramslabel").removeClass("donotshow");
-  }
+  quantitydictionary[fooditem]();
 }); // if the input fooditem is egg, then the two ids in the line 54 and 55 are going to be hidden and the other two are going to be shown, otherwise, the ids in the line 54 and 55 are going to be shown

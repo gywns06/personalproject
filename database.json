@@ -35,6 +35,24 @@
       "expiredate": "2022-10-05",
       "description": "hihi",
       "id": 1665165665199
+    },
+    {
+      "id": 1671826414673,
+      "name": "cheese",
+      "type": "milkproduct",
+      "quantity": "5",
+      "purchasedate": "2022-12-29",
+      "expiredate": "",
+      "description": "hope it works"
+    },
+    {
+      "id": 1671826750540,
+      "name": "egg",
+      "type": "eggproduct",
+      "quantity": "7",
+      "purchasedate": "2022-12-29",
+      "expiredate": "2023-01-06",
+      "description": "oijqfokpokc"
     }
   ],
   "recipies": [

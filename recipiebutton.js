@@ -59,25 +59,32 @@ async function recipiecheck() {
 }
 recipiecheck();
 
+function showquantity(inumber) {
+  $("#quantity" + inumber).removeClass("donotshow");
+  $("#quantitylabel" + inumber).removeClass("donotshow");
+  $("#quantityingrams" + inumber).addClass("donotshow");
+  $("#quantityingramslabel" + inumber).addClass("donotshow");
+}
+
+function showquantityingrams(inumber) {
+  $("#quantity" + inumber).addClass("donotshow");
+  $("#quantitylabel" + inumber).addClass("donotshow");
+  $("#quantityingrams" + inumber).removeClass("donotshow");
+  $("#quantityingramslabel" + inumber).removeClass("donotshow");
+}
+
+let quantitydictionary = {
+  egg: showquantity,
+  cheese: showquantityingrams,
+  beef: showquantityingrams,
+  pork: showquantityingrams,
+};
+
 function ingredientchanger(inputnumber) {
   $("#ingredient" + inputnumber).change(function () {
     fooditem = document.getElementById("ingredient" + inputnumber).value;
     console.log(fooditem);
-    if (fooditem == "egg") {
-      $("#quantity" + inputnumber).removeClass("donotshow");
-      $("#quantitylabel" + inputnumber).removeClass("donotshow");
-      $("#quantityingrams" + inputnumber).addClass("donotshow");
-      $("#quantityingramslabel" + inputnumber).addClass("donotshow");
-    } else if (
-      fooditem == "cheese" ||
-      fooditem == "beef" ||
-      fooditem == "pork"
-    ) {
-      $("#quantity" + inputnumber).addClass("donotshow");
-      $("#quantitylabel" + inputnumber).addClass("donotshow");
-      $("#quantityingrams" + inputnumber).removeClass("donotshow");
-      $("#quantityingramslabel" + inputnumber).removeClass("donotshow");
-    }
+    quantitydictionary[fooditem](inputnumber);
   });
 }
 

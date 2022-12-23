@@ -73,7 +73,7 @@ let quantitydictionary = {
 };
 
 let foodtypedictionary = {
-  egg: { quantity: "#quantity", type: "milkproduct" },
+  egg: { quantity: "#quantity", type: "eggproduct" },
   cheese: { quantity: "#quantityingrams", type: "milkproduct" },
   beef: { quantity: "#quantityingrams", type: "meat" },
   pork: { quantity: "#quantityingrams", type: "meat" },
