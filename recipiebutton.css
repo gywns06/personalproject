@@ -1,3 +1,11 @@
 .donotshow {
   display: none;
 }
+
+#recipietable {
+  width: 100%;
+}
+
+.colpossible {
+  background-color: aqua;
+}

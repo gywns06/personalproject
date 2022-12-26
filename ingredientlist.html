@@ -5,20 +5,28 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="ingredientlist.css" />
     <link rel="stylesheet" href="addbuttonpage.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <div>
-      ingredientlist
-      <a href="http://localhost:8000/coding.html"
+    <div id="titleandlogo">
+      <h1>ingredientlist</h1>
+      <a href="http://localhost:8000/coding.html" id="gohomebutton"
         ><div class="abutton">Go Home</div></a
       >
     </div>
     <div id="ingredientlist"></div>
-    <table id="ingredienttable">
-      <tr>
+    <table id="ingredienttable" cellspacing="0">
+      <colgroup>
+        <col class="colname" />
+        <col class="colquantity" />
+        <col class="colexpiredate" />
+        <col class="coldescription" />
+        <col class="coleditbutton" />
+        <col class="coldeletebutton" />
+      </colgroup>
+      <tr id="firstrowtable">
         <th>Name</th>
         <th>Quantity</th>
         <th>Expiredate</th>
@@ -29,46 +37,69 @@
     </table>
     <div id="editlist">
       <form id="ingredientform" name="ingredients">
-        <label for="food">Choose a food:</label>
-        <select name="food" id="food">
-          <option value="egg">egg</option>
-          <option value="cheese">cheese</option>
-          <option value="beef">beef</option>
-          <option value="pork">pork</option>
-          <!--  <option value="cheese" selected>Cheese</option> -->
-        </select>
+        <!--form is also like a container where you can put input elements-->
+        <div id="firstrow">
+          <div class="firstrowclass">
+            <label for="food">Choose a food:</label
+            ><!--label tag looks for elments whose name is food, and then labels them-->
+            <select name="food" id="food">
+              <!--this tag adds a drop-down-->
+              <option value="egg">egg</option>
+              <!--by using this tag, you can add options in the drop-down-->
+              <option value="cheese">cheese</option>
+              <option value="beef">beef</option>
+              <option value="pork">pork</option>
+            </select>
+          </div>
 
-        <label for="quantity" id="quantitylabel">quantity: </label>
+          <div class="firstrowclass">
+            <label for="quantity" id="quantitylabel">quantity: </label>
 
-        <input type="number" id="quantity" name="quantity" min="1" max="100" />
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="100"
+            /><!--by using this tag, you can choose numbers-->
 
-        <label for="quantityingrams" class="donotshow" id="quantityingramslabel"
-          >quantity in grams:
-        </label>
+            <label
+              for="quantityingrams"
+              class="donotshow"
+              id="quantityingramslabel"
+              >quantity in grams: </label
+            ><!--extra quantity tag is for elements which are not measurable, and it is shown through javascript later-->
 
-        <input
-          type="number"
-          id="quantityingrams"
-          name="quantityingrams"
-          min="1"
-          max="5000"
-          class="donotshow"
-        />
+            <input
+              type="number"
+              id="quantityingrams"
+              name="quantityingrams"
+              min="1"
+              max="5000"
+              class="donotshow"
+            />
+          </div>
+        </div>
 
-        <label for="expiredate">Expire date:</label>
-
-        <input type="date" id="expiredate" name="expire" value="" />
-
-        <p><label for="fooddescription">Any other descriptions:</label></p>
-        <textarea
-          id="fooddescription"
-          name="description"
-          rows="10"
-          cols="100"
-        ></textarea>
-        <br />
-        <button type="button" id="savebutton">Save</button>
-        <button type="button" id="cancelbutton">Cancel</button>
+        <div class="secondrow">
+          <p id="descriptionptag">
+            <label for="fooddescription" id="anyotherdescriptions">
+              Any other descriptions:</label
+            >
+          </p>
+          <textarea
+            id="fooddescription"
+            name="description"
+            rows="10"
+            cols="100"
+          ></textarea
+          ><!--textare tag adds a box where you can write something-->
+        </div>
+        <br /><!--break-->
+        <div>
+          <button type="button" id="savebutton">Save</button>
+          <button type="button" id="cancelbutton">Cancel</button>
+        </div>
       </form>
     </div>
     <script src="ingredientlist.js" async defer></script>

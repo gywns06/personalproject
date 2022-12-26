@@ -1,3 +1,54 @@
 .donotshow {
   display: none;
 } /*this class tag gets rid of elements which have this tag*/
+
+#ingredienttable {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+td {
+  text-align: center;
+  font-size: 20px;
+}
+
+.colname {
+  background-color: #e27979;
+}
+
+.colquantity {
+  background-color: #79e2d6;
+}
+
+.colexpiredate {
+  background-color: #c179e2;
+}
+
+.coldescription {
+  background-color: #9ae279;
+}
+
+.coleditbutton {
+  background-color: #79b0e2;
+}
+
+.coldeletebutton {
+  background-color: #1e8c3d;
+}
+
+#firstrowtable {
+  font-size: 25px;
+}
+
+.editbutton,
+.deletebutton {
+  width: 140px;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(236, 208, 49);
+  font-family: "Unbounded", cursive;
+}
+
+.deletebutton {
+  background-color: rgb(238, 32, 32);
+}

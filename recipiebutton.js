@@ -21,6 +21,11 @@ function checkifpossible(recipie, foodinformation) {
     }
   }
   console.log(insideoffridge);
+  if (insideoffridge == "no") {
+    return '<i class="fa-regular fa-circle-xmark"></i>';
+  } else {
+    return '<i class="fa-regular fa-circle-check"></i>';
+  }
   return insideoffridge;
 }
 

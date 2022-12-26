@@ -1,27 +1,9 @@
 {
   "Fooditem": [
     {
-      "name": "cheese",
-      "type": "milkproduct",
-      "quantity": "7",
-      "purchasedate": "2022-10-07",
-      "expiredate": "2022-10-27",
-      "description": "Hellooo",
-      "id": 1665157411137
-    },
-    {
-      "name": "egg",
-      "type": "milkproduct",
-      "quantity": "6",
-      "purchasedate": "2022-10-06",
-      "expiredate": "2022-10-18",
-      "description": "111",
-      "id": 1665157873066
-    },
-    {
       "name": "beef",
       "type": "meat",
-      "quantity": "2",
+      "quantity": "4",
       "purchasedate": "2022-10-07",
       "expiredate": "2022-10-27",
       "description": "ewtwtg",

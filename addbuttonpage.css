@@ -25,11 +25,14 @@ input {
   gap: 10px;
 }
 
-#submitbutton {
+#submitbutton,
+#cancelbutton,
+#savebutton {
   width: 175px;
   font-size: 30px;
   border-radius: 15px;
   background-color: darkorange;
+  font-family: "Unbounded", cursive;
 }
 
 .firstrowclass {

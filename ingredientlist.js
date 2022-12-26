@@ -25,14 +25,14 @@ fetch("http://localhost:3000/Fooditem")
           json[i].description +
           "</td>" +
           "<td>" +
-          "<button type='button' onclick='editbutton(" +
+          "<button class='editbutton' type='button' onclick='editbutton(" +
           json[i].id +
           ")'>Click here!</button>" +
           "</td>" +
           "<td>" +
-          "<button type='button' onclick='deletebutton(" +
+          "<button class='deletebutton' type='button' onclick='deletebutton(" +
           json[i].id +
-          ")'>Click here!</button>" +
+          ")'>Delete</button>" +
           "</td>" +
           "</tr>"
       );
@@ -118,7 +118,7 @@ function editbutton(id) {
             type: type,
             quantity: quantity,
             purchasedate: json.purchasedate,
-            expiredate: expiredate,
+            expiredate: json.expiredate,
             description: fooddescription,
           }),
         });
