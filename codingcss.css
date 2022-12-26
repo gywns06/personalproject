@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded&display=swap");
+body {
+  font-family: "Unbounded", cursive;
+}
+
 #leftbottom,/*hashtag catches ids*/
 #item {
   margin: 15px; /*this tag adds space between items*/
@@ -16,7 +21,7 @@
 }
 #time {
   background-color: rgb(255, 255, 255);
-  font-size: 35px;
+  font-size: 24px;
   padding: 25px 13px;
 }
 
@@ -40,6 +45,7 @@
 .buttonicon {
   font-size: 320px;
   background-color: #00cdff63;
+  border-radius: 30px;
 }
 #spantest {
   width: 50px;
@@ -125,4 +131,14 @@
   line-height: 40px;
   max-height: 200px;
   overflow-y: hidden;
+}
+
+#addbuttonpagebutton {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#recipepagebutton {
+  padding: 10px;
+  padding-right: 15px;
 }

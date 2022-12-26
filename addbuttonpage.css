@@ -1,3 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded&display=swap");
+body,
+select,
+input {
+  font-size: 25px;
+  font-family: "Unbounded", cursive;
+}
+
 .donotshow {
   display: none;
 } /*this class tag gets rid of elements which have this tag*/
+
+#ingredientform {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#firstrow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+#submitbutton {
+  width: 175px;
+  font-size: 30px;
+  border-radius: 15px;
+  background-color: darkorange;
+}
+
+.firstrowclass {
+  background-color: rgb(81 242 226);
+  padding: 15px;
+  border-radius: 17px;
+}
+
+#food,
+#quantity,
+#quantityingrams,
+#purchasedate,
+#expiredate,
+#fooddescription {
+  border-radius: 12px;
+}
+
+.secondrow {
+  background-color: rgb(110, 85, 211);
+  padding: 5px;
+  border-radius: 15px;
+  width: 95%;
+  align-self: center;
+  display: flex;
+}
+
+#fooddescription {
+  width: 95%;
+  font-size: 25px;
+  align-self: center;
+}
+
+#descriptionptag {
+  margin-left: 50px;
+  margin-top: 80px;
+}
+
+#titleandlogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#gohomebutton {
+  margin-right: 150px;
+}

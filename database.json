@@ -37,13 +37,13 @@
       "id": 1665165665199
     },
     {
-      "id": 1671826414673,
       "name": "cheese",
       "type": "milkproduct",
       "quantity": "5",
       "purchasedate": "2022-12-29",
       "expiredate": "",
-      "description": "hope it works"
+      "description": "it worked",
+      "id": 1671826414673
     },
     {
       "id": 1671826750540,
@@ -139,6 +139,21 @@
         {
           "itemname": "pork",
           "quantity": "1"
+        }
+      ]
+    },
+    {
+      "id": 1671827372016,
+      "name": "EggandBeef",
+      "description": "",
+      "ingredient": [
+        {
+          "itemname": "egg",
+          "quantity": "4"
+        },
+        {
+          "itemname": "beef",
+          "quantity": "11"
         }
       ]
     }
