@@ -39,7 +39,7 @@ function ingredientadd() {
     foodtypedictionary[foodjs].quantity
   ).value;
 
-  fetch("http://localhost:3000/Fooditem", {
+  fetch("https://dashing-chemical-meteoroid.glitch.me/Fooditem", {
     // fetch links to the dataserver
     method: "POST", // POST means to store data
     headers: {
@@ -58,7 +58,10 @@ function ingredientadd() {
     }),
   })
     .then((res) => res.json())
-    .then((res) => console.log(res)); // take the response from the dataserver and then print it on console, *200 means it worked well, 400 or 500 means there is an error*
+    .then((res) => {
+      console.log(res);
+      location.reload();
+    }); // take the response from the dataserver and then print it on console, *200 means it worked well, 400 or 500 means there is an error*
 }
 
 $("#ingredientform").submit(function (e) {

@@ -9,3 +9,23 @@
 .colpossible {
   background-color: aqua;
 }
+
+#ingredientdiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.chooseaningredient {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#recipiedescription {
+  width: 100%;
+  align-self: center;
+  display: flex;
+}

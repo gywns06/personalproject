@@ -71,14 +71,18 @@ setInterval(function () {
 }, 1000);
 
 async function recipiecheck() {
-  const recipies = await fetch("http://localhost:3000/recipies")
+  const recipies = await fetch(
+    "https://dashing-chemical-meteoroid.glitch.me/recipies"
+  )
     .then((response) => {
       return response.json();
     })
     .then((json) => {
       return json;
     });
-  const fooditems = await fetch("http://localhost:3000/Fooditem")
+  const fooditems = await fetch(
+    "https://dashing-chemical-meteoroid.glitch.me/Fooditem"
+  )
     .then((response) => {
       return response.json();
     })

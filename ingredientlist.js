@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/Fooditem")
+fetch("https://dashing-chemical-meteoroid.glitch.me/Fooditem")
   .then((response) => {
     console.log(response);
     return response.json();
@@ -41,14 +41,13 @@ fetch("http://localhost:3000/Fooditem")
 
 function deletebutton(id) {
   console.log(id);
-  fetch("http://localhost:3000/Fooditem/" + id, {
+  fetch("https://dashing-chemical-meteoroid.glitch.me/Fooditem/" + id, {
     method: "DELETE", // DELETE means to delete data
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-  });
-  location.reload();
+  }).then(() => location.reload());
 }
 
 function showquantity() {
@@ -81,7 +80,7 @@ let foodtypedictionary = {
 
 function editbutton(id) {
   console.log(id);
-  fetch("http://localhost:3000/Fooditem/" + id)
+  fetch("https://dashing-chemical-meteoroid.glitch.me/Fooditem/" + id)
     .then((response) => {
       console.log(response);
       return response.json();
@@ -107,7 +106,7 @@ function editbutton(id) {
 
         var type = foodtypedictionary[food].type;
 
-        fetch("http://localhost:3000/Fooditem/" + id, {
+        fetch("https://dashing-chemical-meteoroid.glitch.me/Fooditem/" + id, {
           method: "PUT",
           headers: {
             Accept: "application/json",
@@ -121,8 +120,10 @@ function editbutton(id) {
             expiredate: json.expiredate,
             description: fooddescription,
           }),
+        }).then((json) => {
+          console.log(json);
+          location.reload();
         });
-        location.reload();
       });
       $("#cancelbutton").click(function () {
         location.reload();

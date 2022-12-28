@@ -30,14 +30,18 @@ function checkifpossible(recipie, foodinformation) {
 }
 
 async function recipiecheck() {
-  const recipies = await fetch("http://localhost:3000/recipies")
+  const recipies = await fetch(
+    "https://dashing-chemical-meteoroid.glitch.me/recipies"
+  )
     .then((response) => {
       return response.json();
     })
     .then((json) => {
       return json;
     });
-  const fooditems = await fetch("http://localhost:3000/Fooditem")
+  const fooditems = await fetch(
+    "https://dashing-chemical-meteoroid.glitch.me/Fooditem"
+  )
     .then((response) => {
       return response.json();
     })
@@ -150,7 +154,7 @@ function recipieadd() {
   console.log(recipiedescriptionjs);
   console.log(ingredientlist);
 
-  fetch("http://localhost:3000/recipies", {
+  fetch("https://dashing-chemical-meteoroid.glitch.me/recipies", {
     method: "POST",
     headers: {
       Accept: "application/json",
