@@ -124,7 +124,7 @@ $("#ingredientbutton").click(function () {
   const ingredientdiv = $("#ingredientdiv");
   console.log(ingredientdiv);
   ingredientdiv.append(`<div class="ingredientrow"><div class="chooseaningredient"><label for="recipieingredient">Choose an ingredient:</label>
-  <select name="ingredient" id="ingredient${currentnumber}">
+  <select name="ingredient" class="ingredientclass" id="ingredient${currentnumber}">
     <option value="egg">egg</option>
     <option value="cheese">cheese</option>
     <option value="beef">beef</option>
@@ -133,7 +133,7 @@ $("#ingredientbutton").click(function () {
 
   <div class="chooseaningredient"><label for="quantity" id="quantitylabel${currentnumber}">quantity: </label>
 
-  <input type="number" id="quantity${currentnumber}" name="quantity" min="1" max="100" />
+  <input type="number" class="quantityclass" id="quantity${currentnumber}" name="quantity" min="1" max="100" required/>
 
   <label for="quantityingrams" class="donotshow" id="quantityingramslabel${currentnumber}"
     >quantity in grams:

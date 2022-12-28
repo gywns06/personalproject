@@ -43,6 +43,7 @@
   align-self: center;
   display: flex;
   border-radius: 12px;
+  font-size: 25px;
 }
 
 #secondrow {
@@ -92,7 +93,7 @@
   border-radius: 12px;
 }
 
-#ingredient1,
-#quantity1 {
+.ingredientclass,
+.quantityclass {
   border-radius: 12px;
 }
