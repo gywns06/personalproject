@@ -1,4 +1,5 @@
 function checkifpossible(recipie, foodinformation) {
+  let requiredingredient = {};
   var alltheingredients = recipie.ingredient;
   console.log(alltheingredients);
   var insideoffridge = "yes";
@@ -7,12 +8,12 @@ function checkifpossible(recipie, foodinformation) {
     var itemname = alltheingredients[i].itemname;
     var quantity = alltheingredients[i].quantity;
     for (let j = 0; j < foodinformation.length; j++) {
-      if (
-        itemname == foodinformation[j].name &&
-        quantity <= foodinformation[j].quantity
-      ) {
-        console.log(foodinformation[j]);
-        infridge = true;
+      if (itemname == foodinformation[j].name) {
+        requiredingredient[itemname] = [foodinformation[j].quantity, quantity];
+        if (quantity <= foodinformation[j].quantity) {
+          console.log(foodinformation[j]);
+          infridge = true;
+        }
       }
     }
     console.log(infridge);
@@ -20,11 +21,23 @@ function checkifpossible(recipie, foodinformation) {
       insideoffridge = "no";
     }
   }
+  let requiredingredientstring = "<p>";
+  for (const [key, value] of Object.entries(requiredingredient)) {
+    requiredingredientstring =
+      requiredingredientstring + `${key}[${value[0]}/${value[1]}] `;
+  }
+  requiredingredientstring = requiredingredientstring + "</p>";
   console.log(insideoffridge);
   if (insideoffridge == "no") {
-    return '<i class="fa-regular fa-circle-xmark"></i>';
+    return [
+      requiredingredientstring,
+      '<i class="fa-regular fa-circle-xmark"></i>',
+    ];
   } else {
-    return '<i class="fa-regular fa-circle-check"></i>';
+    return [
+      requiredingredientstring,
+      '<i class="fa-regular fa-circle-check"></i>',
+    ];
   }
   return insideoffridge;
 }
@@ -50,7 +63,12 @@ async function recipiecheck() {
     });
   console.log(recipies);
   console.log(fooditems);
+
   for (let i = 0; i < recipies.length; i++) {
+    const [requiredingredientlist, possibleicon] = checkifpossible(
+      recipies[i],
+      fooditems
+    );
     $("#recipietable").append(
       "<tr>" +
         "<td>" +
@@ -60,8 +78,11 @@ async function recipiecheck() {
         recipies[i].description +
         "</td>" +
         "<td>" +
-        checkifpossible(recipies[i], fooditems) +
+        possibleicon +
+        "</td>" +
         "<td>" +
+        requiredingredientlist +
+        "</td>" +
         "</tr>"
     );
   }
@@ -102,15 +123,15 @@ let currentnumber = 2;
 $("#ingredientbutton").click(function () {
   const ingredientdiv = $("#ingredientdiv");
   console.log(ingredientdiv);
-  ingredientdiv.append(`<br><label for="recipieingredient">Choose an ingredient:</label>
+  ingredientdiv.append(`<div class="ingredientrow"><div class="chooseaningredient"><label for="recipieingredient">Choose an ingredient:</label>
   <select name="ingredient" id="ingredient${currentnumber}">
     <option value="egg">egg</option>
     <option value="cheese">cheese</option>
     <option value="beef">beef</option>
     <option value="pork">pork</option>
-  </select>
+  </select></div>
 
-  <label for="quantity" id="quantitylabel${currentnumber}">quantity: </label>
+  <div class="chooseaningredient"><label for="quantity" id="quantitylabel${currentnumber}">quantity: </label>
 
   <input type="number" id="quantity${currentnumber}" name="quantity" min="1" max="100" />
 
@@ -125,7 +146,7 @@ $("#ingredientbutton").click(function () {
     min="1"
     max="5000"
     class="donotshow"
-  />`);
+  /></div></div>`);
   ingredientchanger("" + currentnumber);
   currentnumber = currentnumber + 1;
 });

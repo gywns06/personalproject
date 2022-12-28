@@ -28,36 +28,37 @@
         <col class="colname" />
         <col class="coldescription" />
         <col class="colpossible" />
+        <col class="colhaverequired" />
       </colgroup>
       <tbody>
         <tr id="firstrowtable">
           <th>Name</th>
           <th>Description</th>
           <th>Possible</th>
+          <th>Have/Required</th>
         </tr>
       </tbody>
     </table>
 
     <form id="recipieform" name="recipies">
-      <label for="recipiename">Recipie name: </label>
+      <div class="addrecipes"><label for="recipiename">Recipie name: </label>
       <input
       type="text"
         id="recipiename"
         name="description1"
-      ></input>
-      <br>
+      ></input></div>
+      
       <button type="button" id="ingredientbutton">Add more ingredients</button>
-      <br>
-      <div id="ingredientdiv" class="chooseaningredient">
-        <label for="recipieingredient">Choose an ingredient:</label>
+      <div id="ingredientdiv" >
+        <div class="ingredientrow"><div class="chooseaningredient"><label for="ingredient1">Choose an ingredient:</label>
       <select name="ingredient" id="ingredient1">
         <option value="egg">egg</option>
         <option value="cheese">cheese</option>
         <option value="beef">beef</option>
         <option value="pork">pork</option>
-      </select>
+      </select></div>
 
-      <label for="quantity" id="quantitylabel1">quantity: </label>
+      <div class="chooseaningredient"><label for="quantity" id="quantitylabel1">quantity: </label>
 
       <input type="number" id="quantity1" name="quantity" min="1" max="100" />
 
@@ -73,19 +74,19 @@
         max="5000"
         class="donotshow"
       />
-      </div>
+      </div></div></div>
       
     <br>
 
-      <p><label for="recipiedescription">Any other descriptions:</label></p>
+      <div id="secondrow"><p id="anyotherdescriptions"><label for="recipiedescription">Any other descriptions:</label></p>
       <textarea
         id="recipiedescription"
         name="description2"
         rows="10"
         cols="100"
-      ></textarea>
+      ></textarea></div>
       <br />
-      <input type="submit" value="Submit" />
+      <input id="submitbutton" type="submit" value="Submit" />
     </form>
 
     <script src="recipiebutton.js" async defer></script>
