@@ -5,9 +5,10 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="recipiebutton.css" />
+    
     <link rel="stylesheet" href="ingredientlist.css" />
     <link rel="stylesheet" href="addbuttonpage.css" />
+    <link rel="stylesheet" href="recipiebutton.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
     rel="stylesheet"
@@ -17,7 +18,7 @@
  
   <body>
     <div id="titleandlogo">
-      <h1>Here are some useful recipes!</h1>
+      <h1 id="title">Here are some useful recipes!</h1>
       <a href="https://chambray-indigo-aardvark.glitch.me/coding.html" id="gohomebutton"
         ><div class="abutton"><img id="logobutton" src="Logo.svg" alt="Fridge Manager" /></div></a
       >
@@ -86,7 +87,7 @@
       
     <br>
 
-      <div id="secondrow"><p id="anyotherdescriptions"><label for="recipiedescription">Any other descriptions:</label></p>
+      <div id="secondrow"><p id="anyotherdescriptions"><label id="anyotherdescriptions" for="recipiedescription">Any other descriptions:</label></p>
       <textarea
         id="recipiedescription"
         name="description2"

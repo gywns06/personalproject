@@ -53,7 +53,6 @@ body {
   background-color: #00cdff63;
 }
 #logo {
-  height: 200px;
   margin: 15px;
 }
 #randomrecipe {
@@ -140,4 +139,49 @@ body {
 #recipepagebutton {
   padding: 10px;
   padding-right: 15px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #leftbottom,
+  #randomrecipe {
+    display: none;
+  }
+  #logobutton {
+    width: 80vw;
+  }
+  #logo {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+  }
+  #website {
+    display: block;
+  }
+  #item {
+    width: 80vw;
+    font-size: 25px;
+    height: 450px;
+    margin-left: 35px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .oldrecent {
+    height: 37%;
+  }
+  #button {
+    width: 100%;
+    flex-direction: row;
+  }
+  .buttonicon {
+    font-size: 100px;
+  }
+  #addbuttonpagebutton {
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #ingredientlistbutton {
+    padding: 7px;
+  }
 }

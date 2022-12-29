@@ -97,3 +97,44 @@
 .quantityclass {
   border-radius: 12px;
 }
+
+@media only screen and (max-width: 1200px) {
+  table tbody tr td:nth-child(3),
+  table tbody tr td:nth-child(4),
+  table tbody tr th:nth-child(3),
+  table tbody tr th:nth-child(4) {
+    display: block;
+  }
+  table tbody tr td:nth-child(2),
+  table tbody tr th:nth-child(2) {
+    display: none;
+  }
+  table tbody tr td:nth-child(1),
+  table tbody tr td:nth-child(3),
+  table tbody tr td:nth-child(4) {
+    font-size: 15px;
+  }
+  .ingredientrow {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .chooseaningredient {
+    width: 80%;
+  }
+  #secondrow {
+    flex-direction: column;
+  }
+  #submitbutton {
+    width: 270px;
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+  #anyotherdescriptions {
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+  .addrecipes {
+    width: 80%;
+  }
+}
