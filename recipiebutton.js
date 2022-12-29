@@ -1,25 +1,35 @@
+function deletebutton(id) {
+  console.log(id);
+  fetch("https://dashing-chemical-meteoroid.glitch.me/recipies/" + id, {
+    method: "DELETE", // DELETE means to delete data
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then(() => location.reload());
+}
+
 function checkifpossible(recipie, foodinformation) {
   let requiredingredient = {};
   var alltheingredients = recipie.ingredient;
   console.log(alltheingredients);
   var insideoffridge = "yes";
   for (let i = 0; i < alltheingredients.length; i++) {
+    var currentquantity = 0;
     var infridge = false;
     var itemname = alltheingredients[i].itemname;
     var quantity = alltheingredients[i].quantity;
     for (let j = 0; j < foodinformation.length; j++) {
       if (itemname == foodinformation[j].name) {
-        requiredingredient[itemname] = [foodinformation[j].quantity, quantity];
-        if (quantity <= foodinformation[j].quantity) {
-          console.log(foodinformation[j]);
-          infridge = true;
-        }
+        currentquantity =
+          currentquantity + parseInt(foodinformation[j].quantity);
       }
     }
     console.log(infridge);
-    if (infridge == false) {
+    if (quantity > currentquantity) {
       insideoffridge = "no";
     }
+    requiredingredient[itemname] = [currentquantity, quantity];
   }
   let requiredingredientstring = "<p>";
   for (const [key, value] of Object.entries(requiredingredient)) {
@@ -83,6 +93,11 @@ async function recipiecheck() {
         "<td>" +
         requiredingredientlist +
         "</td>" +
+        "<td>" +
+        "<button class='deletebutton' type='button' onclick='deletebutton(" +
+        recipies[i].id +
+        ")'>Delete</button>" +
+        "</td>" +
         "</tr>"
     );
   }
@@ -103,11 +118,30 @@ function showquantityingrams(inumber) {
   $("#quantityingramslabel" + inumber).removeClass("donotshow");
 }
 
+let foodtypedictionary = {
+  egg: { quantity: "quantity", type: "eggproduct" },
+  cheese: { quantity: "quantityingrams", type: "milkproduct" },
+  beef: { quantity: "quantityingrams", type: "meat" },
+  pork: { quantity: "quantityingrams", type: "meat" },
+  tomato: { quantity: "quantity", type: "vegetable" },
+  potato: { quantity: "quantity", type: "vegetable" },
+  carrot: { quantity: "quantity", type: "vegetable" },
+  onion: { quantity: "quantity", type: "vegetable" },
+  butter: { quantity: "quantityingrams", type: "milkproduct" },
+  chicken: { quantity: "quantityingrams", type: "meat" },
+};
+
 let quantitydictionary = {
   egg: showquantity,
   cheese: showquantityingrams,
   beef: showquantityingrams,
   pork: showquantityingrams,
+  tomato: showquantity,
+  potato: showquantity,
+  carrot: showquantity,
+  onion: showquantity,
+  butter: showquantityingrams,
+  chicken: showquantityingrams,
 };
 
 function ingredientchanger(inputnumber) {
@@ -129,11 +163,17 @@ $("#ingredientbutton").click(function () {
     <option value="cheese">cheese</option>
     <option value="beef">beef</option>
     <option value="pork">pork</option>
+    <option value="tomato">tomato</option>
+            <option value="potato">potato</option>
+            <option value="carrot">carrot</option>
+            <option value="onion">onion</option>
+            <option value="butter">butter</option>
+            <option value="chicken">chicken</option>
   </select></div>
 
   <div class="chooseaningredient"><label for="quantity" id="quantitylabel${currentnumber}">quantity: </label>
 
-  <input type="number" class="quantityclass" id="quantity${currentnumber}" name="quantity" min="1" max="100" required/>
+  <input type="number" class="quantityclass" id="quantity${currentnumber}" name="quantity" min="1" max="100" />
 
   <label for="quantityingrams" class="donotshow" id="quantityingramslabel${currentnumber}"
     >quantity in grams:
@@ -158,16 +198,13 @@ function recipieadd() {
   recipiedescriptionjs = document.getElementById("recipiedescription").value;
   ingredientlist = [];
   for (let i = 1; i < currentnumber; i++) {
-    quantityjs = document.getElementById("quantity" + i).value;
-    quantityingramsjs = document.getElementById("quantityingrams" + i).value;
     ingredientjs = document.getElementById("ingredient" + i).value;
-    realquantity = 1;
-    if (ingredientjs == "egg") {
-      realquantity = quantityjs;
-    } else if (ingredientjs == "cheese") {
-      realquantity = quantityingramsjs;
-    } else if (ingredientjs == "beef" || ingredientjs == "pork") {
-      realquantity = quantityingramsjs;
+
+    realquantity = document.getElementById(
+      foodtypedictionary[ingredientjs].quantity + i
+    ).value;
+    if (!realquantity) {
+      realquantity = 0;
     }
     ingredientlist.push({ itemname: ingredientjs, quantity: realquantity });
   }
@@ -189,7 +226,8 @@ function recipieadd() {
     }),
   })
     .then((res) => res.json())
-    .then((res) => console.log(res));
+    .then((res) => console.log(res))
+    .then(() => location.reload());
 }
 
 $("#recipieform").submit(function (e) {

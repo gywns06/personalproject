@@ -76,6 +76,7 @@ input {
   justify-content: space-between;
 }
 
-#gohomebutton {
-  margin-right: 150px;
+#logobutton {
+  height: 130px;
+  margin-right: 120px;
 }

@@ -3,6 +3,12 @@ let foodtypedictionary = {
   cheese: { quantity: "quantityingrams", type: "milkproduct" },
   beef: { quantity: "quantityingrams", type: "meat" },
   pork: { quantity: "quantityingrams", type: "meat" },
+  tomato: { quantity: "quantity", type: "vegetable" },
+  potato: { quantity: "quantity", type: "vegetable" },
+  carrot: { quantity: "quantity", type: "vegetable" },
+  onion: { quantity: "quantity", type: "vegetable" },
+  butter: { quantity: "quantityingrams", type: "milkproduct" },
+  chicken: { quantity: "quantityingrams", type: "meat" },
 };
 
 function showquantity() {
@@ -24,6 +30,12 @@ let quantitydictionary = {
   cheese: showquantityingrams,
   beef: showquantityingrams,
   pork: showquantityingrams,
+  tomato: showquantity,
+  potato: showquantity,
+  carrot: showquantity,
+  onion: showquantity,
+  butter: showquantityingrams,
+  chicken: showquantityingrams,
 };
 
 function ingredientadd() {

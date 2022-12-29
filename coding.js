@@ -3,6 +3,12 @@ let fooddictionary = {
   beef: "🍖",
   pork: "🥩",
   cheese: "🧀",
+  tomato: "🍅",
+  potato: "🥔",
+  carrot: "🥕",
+  onion: "🧅",
+  butter: "🧈",
+  chicken: "🍗",
 };
 function compare(a, b) {
   // this 'compare' function is used to order the items based on their purchasedates, so if an item has an ealier purchasedate, it goes in front of others

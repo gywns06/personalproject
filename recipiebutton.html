@@ -17,9 +17,9 @@
  
   <body>
     <div id="titleandlogo">
-      <h1>recipiebutton</h1>
+      <h1>Here are some useful recipes!</h1>
       <a href="https://chambray-indigo-aardvark.glitch.me/coding.html" id="gohomebutton"
-        ><div class="abutton">Go Home</div></a
+        ><div class="abutton"><img id="logobutton" src="Logo.svg" alt="Fridge Manager" /></div></a
       >
     </div>
 
@@ -29,6 +29,7 @@
         <col class="coldescription" />
         <col class="colpossible" />
         <col class="colhaverequired" />
+        <col class="coldeletebutton" />
       </colgroup>
       <tbody>
         <tr id="firstrowtable">
@@ -36,6 +37,7 @@
           <th>Description</th>
           <th>Possible</th>
           <th>Have/Required</th>
+          <th>Delete</th>
         </tr>
       </tbody>
     </table>
@@ -56,11 +58,17 @@
         <option value="cheese">cheese</option>
         <option value="beef">beef</option>
         <option value="pork">pork</option>
+        <option value="tomato">tomato</option>
+        <option value="potato">potato</option>
+        <option value="carrot">carrot</option>
+        <option value="onion">onion</option>
+        <option value="butter">butter</option>
+        <option value="chicken">chicken</option>
       </select></div>
 
       <div class="chooseaningredient"><label for="quantity" id="quantitylabel1">quantity: </label>
 
-      <input type="number" class="quantityclass" id="quantity1" name="quantity" min="1" max="100" required/> 
+      <input type="number" class="quantityclass" id="quantity1" name="quantity" min="1" max="100" /> 
 
       <label for="quantityingrams" class="donotshow" id="quantityingramslabel1"
         >quantity in grams:
